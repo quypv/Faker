@@ -1,0 +1,251 @@
+<?php
+
+namespace Faker\Provider;
+
+class WosWatch extends Base
+{
+
+    protected static $watchNameFormat = array(
+      '{{prefix}} {{modelName}} - {{sku}}' 
+    );
+
+    protected static $modelNameFormat = array(
+      '{{brand}} {{model}}' 
+    );
+
+    protected static $prefix = array(
+        'Đồng hồ',
+    );
+
+    protected static $brand = array(
+        'THOMAS', 'JAMES', 'ROLEX', 'TISSOT', 'OMEGA', 'BREGUET', 'BLANCPAIN', 'PATEK', 'SINN', 'STOWA',
+        'MEISTERSINGER', 'NOMOS', 'GLASHUTTE', 'SEIKO', 'IWC', 'HUBLOT', 'MOVADO', 'BULOVA'
+    );
+
+    protected static $model = array(
+        'Oyster', 'Milgauss', 'GMT Master', 'Explorer', 'Dweller', 'McCabe', 'Seamaster', 'Constellation', 
+        'Deville', 'Sabo', 'Earnshaw', 'Burberry', 'Jefferson', 'Calvi', 'Tradition Grande'
+    );
+
+    protected static $watchAttributeFormat = array(
+        "Loại máy: {{machine}} \n Kính: {{glass}} \n Vỏ: {{material}} \n Dây: {{band}} \n Cấu tạo: {{frame}} \n Thiết kế: {{design}} \n Chức năng: {{feature}}",
+        "Loại máy: {{machine}} \n Kính: {{glass}} \n Cấu tạo: {{frame}} \n Chức năng: {{feature}}",
+        "Loại máy: {{machine}} \n Kính: {{glass}} \n Vỏ: {{material}}",
+        "Loại máy: {{machine}} \n Vỏ: {{material}} \n Dây: {{band}} \n Cấu tạo: {{frame}}",
+        "Loại máy: {{machine}} \n Vỏ: {{material}} \n Dây: {{band}} \n Cấu tạo: {{frame}} \n Thiết kế: {{design}}",
+        "Loại máy: {{machine}} \n Vỏ: {{material}} \n Cấu tạo: {{frame}} \n Thiết kế: {{design}} \n Chức năng: {{feature}}",
+        "Loại máy: {{machine}} \n Kính: {{glass}} \n Vỏ: {{material}} \n Cấu tạo: {{frame}} \n Thiết kế: {{design}}",
+        
+    );
+
+    protected static $machine = array(
+        'Quatz', 'Quartz (Swiss Made)', 'Automatic', 'Handwinding'
+    );
+
+    protected static $glass = array(
+        'Mica', 'Sapphire', 'Sapphire tráng', 'Sapphire nguyên khối', 'Mineral'
+    );
+
+    protected static $material = array(
+        'Thép Inox. Đặc tính Bền, không bị hiện tượng oxy hoá, han rỉ. Chất thép mờ, đường nét sắc cạnh, bề mặt thép trơn mịn', 
+        'Thép không gỉ. Đặc tính Bền, không bị hiện tượng oxy hoá, han rỉ. Loại vỏ này nếu có mạ màu thì lớp mạ thường rất bền, khó bị phai (phải từ ít nhất từ 3 năm trở lên mới có thể bị phai).', 
+        'Stainless Steel', 
+        'All Stainless ', 
+        'Hợp kim chống xước, gốm công nghệ cao (Tungsten, Ceramic): Có lõi bằng thép hoặc titan bọc hợp kim hoặc đá (gốm công nghệ cao) bên ngoài có độ cứng cao, chống xước như kính Sapphire.',
+        'Hợp kim Titanium. Nhẹ, bền, không ôxy hoá, có màu xám tối',
+        'Hợp kim Aluminum (Nhôm). Nhẹ, bền không ôxy hoá, màu trắng mờ'
+    );
+
+    protected static $band = array(
+        'Stainless Steel', 'Mạ', 'hợp kim Titanium', 'Leather Band', 'Da thường', 'Da cao cấp', 'Da cá sấu',
+        'Vải tổng hợp', 'Metal', 'Nylon'
+    );
+
+    protected static $design = array(
+        'vàng trắng, 32 mm x 40.5 mm, dày 10.6 mm; viền được khảm 143 viên kim cương; mặt kính sapphire, nắp lưng trong suốt; khả năng chịu nước 3 atm',
+        'hồng ngọc, đường kính 41 mm, dày 15.95 mm; mặt kiếng sapphire, nắp lưng trong suốt; chiu nước 3 atm',
+        'vàng trắng, đường kính 35 mm, dày 9.15 mm; viền được cách điệu bằng kim cương; mặt kiếng sapphire, nắp lưng trong suốt; khả năng chịu nước 3 atm'
+    );
+
+    protected static $feature = array(
+        'giờ, phút , đồng hồ phụ (hoạt động theo cơ chế tourbillion)',
+        'giờ, phút, đồng hồ chỉ công suất ngày/đêm',
+        'giờ, phút, năng lượng dự trữ được hiển thị ở nắp sau của máy',
+        'hiển thị ngày, thứ và tuần; Lịch mặt trăng'
+    );
+
+    protected static $frame = array(
+        'được làm bằng phương pháp thủ công, máy Breguet Caliber 569; đường kính 36 mm, dày 10.82 mm; 43 hạt chân kính; 18,000 dao động/phút; dự trữ năng lượng 50 giờ',
+        'máy tự động Breguet Caliber 78CS; 23 x 32 mm; dày 5.8 mm; 45 hạt chân kính, 25,200 dao động/phút; dây tóc bằng cao su, dự trữ năng lượng 57 giờ',
+        'được chế tác bằng tay, dùng máy Breguet Caliber 558.1; đường kính 30.5 mm; dày 6.02 mm; 21 hạt chân kính; 18,000 dao động/phút; sư dụng cùng loại lò xo của Breguet; công nghệ 1 phút "Tourbillion"; được khắc bằng tay',
+        'đường kính 36 mm, dày 10.82 mm; dày 6.02 mm; 21 hạt chân kính; dự trữ năng lượng 50 giờ'
+    );
+
+    protected static $wShortDescription = array (
+        'Đồng hồ Thụy Sỹ có mặt màu trắng viền mạ vàng kết hợp với dây da màu đen sang trọng giúp cánh mày râu định hình nên phong thái của mình không chỉ ở văn phòng làm việc mà ngay cả những lúc dạo phố cùng nàng.',
+        'Thiết kế kim xanh độc đáo, lạ mắt: mảnh nhưng đầy quyến rũ - đó chính là kim của chiếc đồng hồ Swiss đẳng cấp. Vỏ đồng hồ được mạ vàng bằng công nghệ PVD cao cấp càng khiến cho nó trở nên cao quý mà các thương hiệu khác khó có thể vượt qua được.',
+        'Mặt xanh đặc biệt khiến cho chiếc đồng hồ trở nên lạ lẫm nhưng không kém phần sang trọng kết hợp với vỏ đồng hồ được mạ vàng bằng công nghệ PVD cao cấp làm cho chiếc đồng hồ trở nên đặc biệt. Bên cạnh đó, thiết kế mặt tròn nam tính và mạnh mẽ, các chi tiết trang trí như vạch chia giờ, kim đồng hồ... được bố trí hài hòa, mang tính thẩm mỹ cao, đã góp phần tạo nên phong cách riêng cho người sở hữu nó',
+        'Đồng hồ nam Thụy Sỹ được thiết kế dành riêng cho những chàng trai trẻ trung, năng động. Sở hữu kiểu mặt tròn nam tính và mạnh mẽ, các chi tiết trang trí như vạch chia giờ, kim đồng hồ... được bố trí một cách hài hòa, mang tính thẩm mỹ cao, sản phẩm góp phần tạo nên phong cách riêng cho bạn.',
+        'Aries Gold là hãng đồng hồ được thành lập vào năm 1928 bởi một nhóm kỹ sư Châu Âu tại Thụy Sỹ, họ cùng chung một mục đích: tạo ra những chiếc đồng hồ cao cấp mạnh mẽ và có độ chính xác cao',
+        'Sturhling Tourbillon biểu tượng cho độ chính xác tuyệt vời của cỗ máy đo thời gian. Sturhling Tourbillon là thương hiệu của những mẫu đồng hồ đẳng cấp,phong cách và sành điệu trong vài thập kỷ qua',
+    );
+
+    protected static $wPicture = array(
+        'http://watchesofus.vn/cdn/store/3656/ps/20160318/thomas_earnshaw___es_0017_11_1_1024x1024.jpeg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160920/THOMAS_EARNSHAW___ES_8006_01_SET_01_1000x1000.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160807/JAMES_MCCABE___JM_1020_22_1_1000x1000.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160807/THOMAS_EARNSHAW___ES_8030_33_1_1024x1024.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160421/JAMES_MCCABE___JM_1011_01_1_1000x1000.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160421/thomas_earnshaw_es_8049_03_1_1024x1024.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160331/burei___bm_13002_lh_1_1000x1000.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20161010/THOMAS_EARNSHAW___ES_8030_22_1_1024x1024.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160422/james_mccabe___jm_1008_01_2_1000x668.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160422/james_mccabe___jm_1009_03_2_1000x668.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160422/james_mccabe___jm_1009_02_2_1000x668.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160422/james_mccabe___jm_1009_01_2_1000x668.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160422/james_mccabe___jm_1011_01_2_thumb_600x600.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160429/stuhrling_original___564_01_2_944x944.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160518/stuhrling_original___571_3335k2_2_thumb_600x600.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160626/thomas_earnshaw___es_8043_22_2_thumb_600x600.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160613/james_mccabe___jm_1018_55_2_thumb_600x600.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160318/claude_bernard___65003_3_ain_2_thumb_436x599.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160318/haurex___6n510urr_1_1000x1000.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160318/thomas_earnshaw___es_0017_11_2_1024x1024.jpeg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160321/burei___bm_5003_51a_2_385x500.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160321/burei___bm_5003_52eg_1_2_417x500.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160321/burei___bm_5003_52ag_1_2_385x500.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160321/burei___sm_15008_p01ey_2_406x500.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160321/burei___sm_15008_p06eg_2_406x500.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160321/burei___sm_15013_1_p03er_2_361x500.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160321/burei___sm_15013_p02ag_2_722x1000.jpg',
+        'http://watchesofus.vn/cdn/store/3656/ps/20160309/stuhrling_original___571_3345k54_2_thumb_600x600.jpg',
+    );
+
+    /**
+     * @return string
+     * @example 'Đồng hồ JAMES McCabe - 1020'
+     */
+    public function watchName()
+    {
+        $format = static::randomElement(static::$watchNameFormat);
+
+        return $this->generator->parse($format);
+    }
+
+    /**
+     * @example 'Đồng hồ'
+     */
+    public static function prefix()
+    {
+        return static::randomElement(static::$prefix);
+    }
+
+    /**
+     * @example 'JAMES McCabe'
+     */
+    public function modelName()
+    {
+        $format = static::randomElement(static::$modelNameFormat);
+
+        return $this->generator->parse($format);
+    }
+
+    /**
+     * @example '3637'
+     */
+    public static function sku()
+    {
+        return (string) static::numerify('####');
+    }
+
+    /**
+     * @example 'JAMES'
+     */
+    public function brand()
+    {
+        return static::randomElement(static::$brand);
+    }
+
+    /**
+     * @example 'McCabe'
+     */
+    public function model()
+    {
+        return static::randomElement(static::$model);
+    }
+
+    /**
+     * @return string
+     * @example 'Đồng hồ JAMES McCabe - 1020'
+     */
+    public function watchAttribute()
+    {
+        $format = static::randomElement(static::$watchAttributeFormat);
+
+        return $this->generator->parse($format);
+    }
+
+    /**
+     * @example 'Quatz'
+     */
+    public function machine()
+    {
+        return static::randomElement(static::$machine);
+    }
+
+    /**
+     * @example 'Sapphire'
+     */
+    public function glass()
+    {
+        return static::randomElement(static::$glass);
+    }
+
+    /**
+     * @example 'Stainless Steel'
+     */
+    public function material()
+    {
+        return static::randomElement(static::$material);
+    }
+
+    /**
+     * @example 'Da cao cấp'
+     */
+    public function band()
+    {
+        return static::randomElement(static::$band);
+    }
+
+    /**
+     */
+    public function design()
+    {
+        return static::randomElement(static::$design);
+    }
+
+    /**
+     */
+    public function feature()
+    {
+        return static::randomElement(static::$feature);
+    }
+
+    /**
+     */
+    public function frame()
+    {
+        return static::randomElement(static::$frame);
+    }
+
+    public function wShortDescription()
+    {
+        return static::randomElement(static::$wShortDescription);        
+    }
+
+    public function wPicture()
+    {
+        return static::randomElement(static::$wPicture);
+    }
+    
+}
