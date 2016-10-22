@@ -20,11 +20,11 @@ class WosPlayer extends Base
     //     return (string) static::name();
     // }
 
-    public static function wPicture()
+    public static function wFbPicture()
     {
-        $rand = static::numerify('##');
+        $rand = static::numberBetween(1, 85);
 
-        return "uploads/sample/100x100/fb-ava-$rand.jpg";
+        return "/uploads/sample/100x100/fb-ava-$rand.jpg";
     }
 
     public static function wUuid()
@@ -34,7 +34,7 @@ class WosPlayer extends Base
 
     public static function wCoin()
     {
-        return static::numerify('##0000');
+        return static::numerify('##00000');
     }
 
 }
